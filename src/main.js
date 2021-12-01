@@ -9,33 +9,33 @@ const myKey = ec.keyFromPrivate('7c4c45907dec40c91bab3480c39032e90049f1a44f3e18c
 const myWalletAddress = myKey.getPublic('hex');
 
 // Create new instance of Blockchain class
-const savjeeCoin = new Blockchain();
+const didiCoin = new Blockchain();
 
 // Mine first block
-savjeeCoin.minePendingTransactions(myWalletAddress);
+didiCoin.minePendingTransactions(myWalletAddress);
 
 // Create a transaction & sign it with your key
 const tx1 = new Transaction(myWalletAddress, 'address2', 100);
 tx1.signTransaction(myKey);
-savjeeCoin.addTransaction(tx1);
+didiCoin.addTransaction(tx1);
 
 // Mine block
-savjeeCoin.minePendingTransactions(myWalletAddress);
+didiCoin.minePendingTransactions(myWalletAddress);
 
 // Create second transaction
 const tx2 = new Transaction(myWalletAddress, 'address1', 50);
 tx2.signTransaction(myKey);
-savjeeCoin.addTransaction(tx2);
+didiCoin.addTransaction(tx2);
 
 // Mine block
-savjeeCoin.minePendingTransactions(myWalletAddress);
+didiCoin.minePendingTransactions(myWalletAddress);
 
 console.log();
-console.log(`Balance of xavier is ${savjeeCoin.getBalanceOfAddress(myWalletAddress)}`);
+console.log(`Balance of xxxx is ${didiCoin.getBalanceOfAddress(myWalletAddress)}`);
 
 // Uncomment this line if you want to test tampering with the chain
-// savjeeCoin.chain[1].transactions[0].amount = 10;
+// didiCoin.chain[1].transactions[0].amount = 10;
 
 // Check if the chain is valid
 console.log();
-console.log('Blockchain valid?', savjeeCoin.isChainValid() ? 'Yes' : 'No');
+console.log('Blockchain valid?', didiCoin.isChainValid() ? 'Yes' : 'No');
